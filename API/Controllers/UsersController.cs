@@ -1,10 +1,12 @@
 ﻿using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers;
-
+namespace API.Controllers
+{
+[Authorize]
 public class UsersController : BaseApiController
 {
     private readonly DataContext _context;
@@ -20,8 +22,9 @@ public class UsersController : BaseApiController
         return users;
     }
 
-    [HttpGet("{id}")] // /api/users/2
+    [HttpGet("{id}")] 
     public async Task<ActionResult<AppUser>> GetUser(int id){
         return await _context.Users.FindAsync(id);
     }
+}
 }
