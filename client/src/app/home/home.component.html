@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div *ngIf="!registerMode" style="text-align:center;">
         <h1>Find your match</h1>
-        <p class="lead">View your matches... all you need to do is sign up!</p>
+        <p class="lead">Your perfect match is out there - sign up for Spark and let us help you find them!</p>
         <div class="text-center">
             <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
             <button class="btn btn-primary btn-info btn-lg">Learn More</button>
@@ -11,7 +11,7 @@
     <div *ngIf="registerMode" class="container">
         <div class="row justify-content-center">
             <div class="col-4">
-                <p>Register form goes here</p>
+                <app-register></app-register>
             </div>
         </div>
     </div>
