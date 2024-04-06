@@ -34,9 +34,6 @@ public class AppUser
 
     public List<Photo> Photos {get; set;} = new();
 
-    public int GetAge()
-    {
-        return DateOfBirth.CalculateAge();
-    }
+  
 }
 }
